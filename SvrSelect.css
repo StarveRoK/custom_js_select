@@ -1,0 +1,126 @@
+
+.svr-select-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    position: relative;
+}
+
+.svr-select-top-div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.svr-span-value{
+    font-size: 1rem;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+.svr-icon-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.svr-icon-div.rotate{
+    rotate: -90deg;
+}
+
+.svr-icon-div.rotate.open{
+    animation: rotateIcon .5s forwards;
+}
+@keyframes rotateIcon {
+    0% {
+        rotate: -90deg;
+    }
+    100% {
+        rotate: 90deg;
+    }
+}
+
+.svr-icon-div.rotate.close{
+    animation: rotateIconBack .5s forwards;
+}
+@keyframes rotateIconBack {
+    0% {
+        rotate: 90deg;
+    }
+    100% {
+        rotate: -90deg;
+    }
+}
+
+.svr-icon-div.open:not(.rotate){
+    animation: rotateIconDefault .5s forwards;
+}
+@keyframes rotateIconDefault {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 180deg;
+    }
+}
+
+.svr-icon-div.close:not(.rotate){
+    animation: rotateIconBackDefault .5s forwards;
+}
+@keyframes rotateIconBackDefault {
+    0% {
+        rotate: 180deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+.svr-select-bot-div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    min-height: 60px;
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.svr-select-bot-div::-webkit-scrollbar {
+    display: none;
+}
+.svr-values-div{
+    border-bottom: 1px solid #dcdcdc;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    height: 30px;
+    font-size: 1rem;
+    text-wrap: nowrap;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: .3s;
+}
+.svr-values-div.active{
+    background: #efefef;
+}
+.svr-values-div:hover{
+    background: #efefef;
+}
+.svr-values-div:last-child {
+    border: none;
+}
